@@ -1,0 +1,6 @@
+framework module Pods_DistanceUITests {
+  umbrella header "Pods-DistanceUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
