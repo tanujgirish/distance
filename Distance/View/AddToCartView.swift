@@ -9,6 +9,10 @@
 import UIKit
 import SnapKit
 
+protocol QuantityDelegate {
+    func addToCart(_ product: Product, _ quantity: Int)
+}
+
 class AddToCartView: UIView {
     
     let productLabel = UILabel()
@@ -22,6 +26,9 @@ class AddToCartView: UIView {
             initalizeView()
         }
     }
+    
+    var delegate: QuantityDelegate!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +60,8 @@ class AddToCartView: UIView {
         }
         
         subtractButton.setImage(#imageLiteral(resourceName: "minus"), for: .normal)
+        subtractButton.isEnabled = false
+        subtractButton.addTarget(self, action: #selector(decreaeQuantity(_:)), for: .touchUpInside)
         self.addSubview(subtractButton)
         subtractButton.snp.makeConstraints { (make) in
             make.size.equalTo(40)
@@ -61,6 +70,7 @@ class AddToCartView: UIView {
         }
         
         addButton.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        addButton.addTarget(self, action: #selector(increaseQuantity(_:)), for: .touchUpInside)
         self.addSubview(addButton)
         addButton.snp.makeConstraints { (make) in
             make.size.equalTo(40)
@@ -72,12 +82,46 @@ class AddToCartView: UIView {
         addToCartButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 18)
         addToCartButton.backgroundColor = UIColor.FlatColor.red
         addToCartButton.titleLabel?.textColor = UIColor.white
+        addToCartButton.addTarget(self, action: #selector(addToCart(_:)), for: .touchUpInside)
         self.addSubview(addToCartButton)
         addToCartButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.snp.bottom)
             make.width.equalTo(self.snp.width)
             make.height.equalTo(self.snp.height).multipliedBy(0.3)
             make.centerX.equalTo(self.snp.centerX)
+        }
+    }
+    
+    @objc func increaseQuantity(_ sender: UIButton) {
+        guard let quantityText = self.quantity.text else { return }
+        if let currentQuantity = Int(quantityText) {
+            let updatedQuantity = currentQuantity + 1
+            self.quantity.text = "\(updatedQuantity)"
+            if updatedQuantity > 1 {
+                subtractButton.isEnabled = true
+            } else {
+                subtractButton.isEnabled = false
+            }
+        }
+    }
+    
+    @objc func decreaeQuantity(_ sender: UIButton) {
+        guard let quantityText = self.quantity.text else { return }
+        if let currentQuantity = Int(quantityText) {
+            let updatedQuantity = currentQuantity - 1
+            self.quantity.text = "\(updatedQuantity)"
+            if updatedQuantity == 1 {
+                subtractButton.isEnabled = false
+            } else {
+                subtractButton.isEnabled = true
+            }
+        }
+    }
+    
+    @objc func addToCart(_ sender: UIButton) {
+        guard let quantityText = quantity.text, let product = self.product else { return }
+        if let currentQuantity = Int(quantityText) {
+            delegate.addToCart(product, currentQuantity)
         }
     }
     

@@ -16,6 +16,8 @@
 		BD82B2441F86167C00CE30DA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2431F86167C00CE30DA /* Product.swift */; };
 		BD82B2481F86884300CE30DA /* AddToCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2471F86884300CE30DA /* AddToCartView.swift */; };
 		BD82B24C1F87559A00CE30DA /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B24B1F87559A00CE30DA /* Cart.swift */; };
+		BD8788B21F884D2000ED3617 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8788B11F884D1F00ED3617 /* CartViewController.swift */; };
+		BD8788B41F884D9700ED3617 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */; };
 		BDC500E91F7B4DDE00660B3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDC500E81F7B4DDE00660B3E /* GoogleService-Info.plist */; };
 		BDD1457A1F7E1FF8003D6B47 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD145791F7E1FF8003D6B47 /* HomeViewController.swift */; };
 		BDD1457F1F7F6DF7003D6B47 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1457E1F7F6DF6003D6B47 /* Interactor.swift */; };
@@ -71,6 +73,8 @@
 		BD82B2431F86167C00CE30DA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BD82B2471F86884300CE30DA /* AddToCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartView.swift; sourceTree = "<group>"; };
 		BD82B24B1F87559A00CE30DA /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		BD8788B11F884D1F00ED3617 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		BDC500E81F7B4DDE00660B3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BDD145791F7E1FF8003D6B47 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDD1457E1F7F6DF6003D6B47 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */,
+				BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */,
 				BD82B2471F86884300CE30DA /* AddToCartView.swift */,
 				BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */,
 			);
@@ -252,6 +257,7 @@
 				BDF4F1F41F7C643D0012AAD3 /* Login */,
 				BDF4F1F31F7C642E0012AAD3 /* Sign Up */,
 				BD82B2411F86131200CE30DA /* ProductViewController.swift */,
+				BD8788B11F884D1F00ED3617 /* CartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8788B41F884D9700ED3617 /* CartTableViewCell.swift in Sources */,
 				BDF4F1EA1F7C0C080012AAD3 /* LoginViewController.swift in Sources */,
 				BDF4F1F21F7C0C370012AAD3 /* PasswordViewController.swift in Sources */,
 				BD82B24C1F87559A00CE30DA /* Cart.swift in Sources */,
@@ -558,6 +565,7 @@
 				BD09B6E91F8206900018D6C2 /* HomeCollectionViewCell.swift in Sources */,
 				BDD67B2F1F78B0D1001E939E /* AppDelegate.swift in Sources */,
 				BDD1457F1F7F6DF7003D6B47 /* Interactor.swift in Sources */,
+				BD8788B21F884D2000ED3617 /* CartViewController.swift in Sources */,
 				BD82B2481F86884300CE30DA /* AddToCartView.swift in Sources */,
 				BD09B6EE1F821A050018D6C2 /* StringExtension.swift in Sources */,
 				BDD1457A1F7E1FF8003D6B47 /* HomeViewController.swift in Sources */,

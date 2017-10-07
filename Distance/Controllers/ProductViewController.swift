@@ -60,13 +60,7 @@ class ProductViewController: UIViewController {
         }
     }
     
-    func increaseQuantity(_ previousValue: Int) {
-        
-    }
     
-    func decreaeQuantity(_ previousValue: Int) {
-        
-    }
 }
 
 extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
@@ -94,7 +88,10 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
             dimView.addGestureRecognizer(gestureRecognizer)
         }
         
+        cartView.delegate = self
         cartView.product = selectedProduct
+        
+        
         self.tabBarController?.view.addSubview(self.cartView)
         self.navigationController?.view.addSubview(self.dimView)
         
@@ -104,6 +101,13 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
         }, completion: nil)
     }
     
+}
+
+extension ProductViewController: QuantityDelegate {
+    func addToCart(_ product: Product, _ quantity: Int) {
+        CartManager.sharedInstance.addProduct(product, quantity)
+        self.dismissAddCartView(UITapGestureRecognizer())
+    }
 }
 
 

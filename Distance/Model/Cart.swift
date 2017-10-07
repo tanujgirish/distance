@@ -8,14 +8,14 @@
 
 import UIKit
 
-//class var sharedInstance: CartManager {
-//    struct Static {
-//        static var onceToken: dispatch_once_t = 0
-//        static var instance: CartManager? = nil
-//    }
-//    dispatch_once(&Static.onceToken) {
-//        Static.instance = CartManager()
-//    }
-//    return Static.instance!
-//}
-
+class CartManager {
+    
+    static let sharedInstance = CartManager()
+    private init() {}
+    var products = [Product: Int]()
+    
+    func addProduct(_ product: Product, _ quantity: Int) {
+        products[product] = quantity
+        print(products)
+    }
+}
