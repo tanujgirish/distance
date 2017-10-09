@@ -12,6 +12,8 @@
 		BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6EB1F820A640018D6C2 /* Category.swift */; };
 		BD09B6EE1F821A050018D6C2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6ED1F821A050018D6C2 /* StringExtension.swift */; };
 		BD6529AD1F8B0A5C00BB9D49 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */; };
+		BD6529AF1F8B4C8900BB9D49 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */; };
+		BD6529B11F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */; };
 		BD82B2401F8612B900CE30DA /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */; };
 		BD82B2421F86131200CE30DA /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2411F86131200CE30DA /* ProductViewController.swift */; };
 		BD82B2441F86167C00CE30DA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2431F86167C00CE30DA /* Product.swift */; };
@@ -75,6 +77,8 @@
 		BD09B6EB1F820A640018D6C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BD09B6ED1F821A050018D6C2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
+		BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchTableViewCell.swift; sourceTree = "<group>"; };
 		BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		BD82B2411F86131200CE30DA /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BD82B2431F86167C00CE30DA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */,
+				BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */,
 				BD8878371F8A093800AE36FD /* AddContactTableViewCell.swift */,
 				BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */,
 				BD82B2471F86884300CE30DA /* AddToCartView.swift */,
@@ -273,6 +278,7 @@
 				BDF4F1F31F7C642E0012AAD3 /* Sign Up */,
 				BD82B2411F86131200CE30DA /* ProductViewController.swift */,
 				BD8788B11F884D1F00ED3617 /* CartViewController.swift */,
+				BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */,
 				BD8878391F8A094B00AE36FD /* AddContactViewController.swift */,
 				BD8878351F89DCE500AE36FD /* AddressChangeViewController.swift */,
 			);
@@ -579,11 +585,13 @@
 				BDF4F1EE1F7C0C230012AAD3 /* EmailViewController.swift in Sources */,
 				BDF4F1F71F7C68F00012AAD3 /* ColorExtension.swift in Sources */,
 				BD82B2441F86167C00CE30DA /* Product.swift in Sources */,
+				BD6529AF1F8B4C8900BB9D49 /* AddressSearchViewController.swift in Sources */,
 				BDF4F1E81F7C0BFB0012AAD3 /* SignUpPageViewController.swift in Sources */,
 				BD82B2421F86131200CE30DA /* ProductViewController.swift in Sources */,
 				BD8878381F8A093800AE36FD /* AddContactTableViewCell.swift in Sources */,
 				BD09B6E91F8206900018D6C2 /* HomeCollectionViewCell.swift in Sources */,
 				BDD67B2F1F78B0D1001E939E /* AppDelegate.swift in Sources */,
+				BD6529B11F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift in Sources */,
 				BDD1457F1F7F6DF7003D6B47 /* Interactor.swift in Sources */,
 				BD8788B21F884D2000ED3617 /* CartViewController.swift in Sources */,
 				BD8788B61F8940D100ED3617 /* LocationManager.swift in Sources */,

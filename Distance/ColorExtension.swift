@@ -26,6 +26,7 @@ extension UIColor {
     struct FlatColor {
         static let teal = UIColor(netHex: 0x008080)
         static let red = UIColor(netHex: 0xFF380E)
+        static let lightGray = UIColor(netHex: 0xEDEDED)
         static let lightBlue = UIColor(netHex: 0xEFEFEF)
     }
 }

@@ -135,6 +135,12 @@ class AddContactViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    func presentSearchAddress() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "serachaddressvc") as! AddressSearchViewController
+        let navController = UINavigationController(rootViewController: vc)
+        self.present(navController, animated: true, completion: nil)
+    }
 }
 
 extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
@@ -198,6 +204,7 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
         
         if tableView.numberOfSections == 1 && nonUserContacts.count > 0 {
             
+            presentSearchAddress()
             
         } else if tableView.numberOfSections == 1 && existingUsers.count > 0 {
             
@@ -210,6 +217,8 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
                 self.addExistingUserToList(existingUsers[indexPath.row])
                 
             } else {
+                
+                presentSearchAddress()
                 
             }
             
