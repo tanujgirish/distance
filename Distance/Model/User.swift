@@ -14,8 +14,17 @@ class User: NSObject {
     var email: String!
     var phone: String!
     var password: String!
+    var id: String!
     
     override init() {
         super.init()
+    }
+    
+    init(dictionary: [String: Any], id: String) {
+        super.init()
+        name = dictionary["name"] as? String
+        email = dictionary["email"] as? String
+        self.id = id
+        phone = dictionary["phone"] as? String
     }
 }

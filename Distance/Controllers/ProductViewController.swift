@@ -27,6 +27,7 @@ class ProductViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     func setUpNavigationTitle() {
@@ -73,6 +74,7 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: ProductListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "productcell", for: indexPath) as! ProductListTableViewCell
         cell.productLabel.text = products[indexPath.row].productName
         cell.priceLabel.text = "$\(products[indexPath.row].price!)"
+        cell.selectionStyle = .none
         return cell
     }
     

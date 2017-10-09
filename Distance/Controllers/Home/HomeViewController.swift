@@ -10,6 +10,7 @@ import UIKit
 import iCarousel
 import Firebase
 import SDWebImage
+import CoreLocation
 
 class HomeViewController: UIViewController {
     
@@ -23,6 +24,7 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         self.collectionView.backgroundColor = UIColor.FlatColor.lightBlue
         retrieveProducts()
+        setUpNavBar()
     }
     
     func retrieveProducts() {
@@ -40,8 +42,30 @@ class HomeViewController: UIViewController {
         }, withCancel: nil)
     }
     
+    func setUpNavBar() {
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
+        button.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 17)
+        
+        button.addTarget(self, action: #selector(self.presentAddressVc(_:)), for: .touchUpInside)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitle("To Name", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "down"), for: .normal)
+        button.imageView?.frame.size = CGSize(width: 20, height: 36)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: button.frame.width, bottom: 0, right: 0)
+        
+        self.navigationItem.titleView = button
+        
+    }
+    
+    @objc func presentAddressVc(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "addresschangevc") as! AddressChangeViewController
+        let navController = UINavigationController(rootViewController: vc)
+        self.present(navController, animated: true, completion: nil)
+    }
+    
 }
-
+    
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

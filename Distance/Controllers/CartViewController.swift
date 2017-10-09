@@ -15,6 +15,9 @@ class CartViewController: UIViewController {
     var cartObj = CartManager.sharedInstance.products
     var keys = [Product]()
     
+    var cartView: AddToCartView!
+    var dimView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -26,7 +29,6 @@ class CartViewController: UIViewController {
         super.viewDidAppear(animated)
         cartObj = CartManager.sharedInstance.products
         keys = Array(cartObj.keys)
-        
         self.tableView.reloadData()
     }
     
@@ -43,6 +45,17 @@ class CartViewController: UIViewController {
         var total = Double()
         total = calculateSubTotal() + 2.00
         return total
+    }
+    
+    @objc func dismissAddCartView(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+            self.cartView.frame.origin.y = self.view.frame.height + 185
+            self.dimView.backgroundColor = UIColor.clear
+        }) { (result) in
+            self.cartView.removeFromSuperview()
+            self.dimView.removeFromSuperview()
+            self.tableView.reloadData()
+        }
     }
 
 }
@@ -77,6 +90,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             cell.quantityLabel.layer.masksToBounds = false
             cell.quantityLabel.clipsToBounds = true
             
+            cell.selectionStyle = .none
+            
             return cell
             
         } else {
@@ -88,8 +103,43 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             cell.subtotalPriceLabel.text = "$\(calculateSubTotal())"
             cell.deliveryPriceLabel.text = "$2.00"
             cell.totalPriceLabel.text = "$\(calculateTotal())"
+            
+            cell.selectionStyle = .none
+            
             return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedProduct = self.keys[indexPath.row]
+        if cartView == nil && dimView == nil {
+            let frame = CGRect(x: 0, y: self.view.frame.height + 185, width: self.view.frame.width, height: 185)
+            cartView = AddToCartView(frame: frame)
+            dimView = UIView(frame: self.view.frame)
+            
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissAddCartView(_:)))
+            dimView.isUserInteractionEnabled = true
+            dimView.addGestureRecognizer(gestureRecognizer)
+        }
+        
+        cartView.delegate = self
+        cartView.product = selectedProduct
+        
+        
+        self.tabBarController?.view.addSubview(self.cartView)
+        self.navigationController?.view.addSubview(self.dimView)
+        
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+            self.cartView.frame.origin.y = self.view.frame.height - 185
+            self.dimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        }, completion: nil)
+    }
+}
+
+extension CartViewController: QuantityDelegate {
+    func addToCart(_ product: Product, _ quantity: Int) {
+        CartManager.sharedInstance.addProduct(product, quantity)
+        self.dismissAddCartView(UITapGestureRecognizer())
     }
 }

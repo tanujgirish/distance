@@ -11,6 +11,7 @@
 		BD09B6E91F8206900018D6C2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */; };
 		BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6EB1F820A640018D6C2 /* Category.swift */; };
 		BD09B6EE1F821A050018D6C2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6ED1F821A050018D6C2 /* StringExtension.swift */; };
+		BD6529AD1F8B0A5C00BB9D49 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */; };
 		BD82B2401F8612B900CE30DA /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */; };
 		BD82B2421F86131200CE30DA /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2411F86131200CE30DA /* ProductViewController.swift */; };
 		BD82B2441F86167C00CE30DA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2431F86167C00CE30DA /* Product.swift */; };
@@ -18,6 +19,11 @@
 		BD82B24C1F87559A00CE30DA /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B24B1F87559A00CE30DA /* Cart.swift */; };
 		BD8788B21F884D2000ED3617 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8788B11F884D1F00ED3617 /* CartViewController.swift */; };
 		BD8788B41F884D9700ED3617 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */; };
+		BD8788B61F8940D100ED3617 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8788B51F8940D100ED3617 /* LocationManager.swift */; };
+		BD8878341F89DC4400AE36FD /* NewAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8878331F89DC4400AE36FD /* NewAddressTableViewCell.swift */; };
+		BD8878361F89DCE500AE36FD /* AddressChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8878351F89DCE500AE36FD /* AddressChangeViewController.swift */; };
+		BD8878381F8A093800AE36FD /* AddContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8878371F8A093800AE36FD /* AddContactTableViewCell.swift */; };
+		BD88783A1F8A094B00AE36FD /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8878391F8A094B00AE36FD /* AddContactViewController.swift */; };
 		BDC500E91F7B4DDE00660B3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDC500E81F7B4DDE00660B3E /* GoogleService-Info.plist */; };
 		BDD1457A1F7E1FF8003D6B47 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD145791F7E1FF8003D6B47 /* HomeViewController.swift */; };
 		BDD1457F1F7F6DF7003D6B47 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1457E1F7F6DF6003D6B47 /* Interactor.swift */; };
@@ -68,6 +74,7 @@
 		BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD09B6EB1F820A640018D6C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BD09B6ED1F821A050018D6C2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		BD82B2411F86131200CE30DA /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BD82B2431F86167C00CE30DA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -75,6 +82,11 @@
 		BD82B24B1F87559A00CE30DA /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		BD8788B11F884D1F00ED3617 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		BD8788B51F8940D100ED3617 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BD8878331F89DC4400AE36FD /* NewAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddressTableViewCell.swift; sourceTree = "<group>"; };
+		BD8878351F89DCE500AE36FD /* AddressChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewController.swift; sourceTree = "<group>"; };
+		BD8878371F8A093800AE36FD /* AddContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactTableViewCell.swift; sourceTree = "<group>"; };
+		BD8878391F8A094B00AE36FD /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		BDC500E81F7B4DDE00660B3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BDD145791F7E1FF8003D6B47 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDD1457E1F7F6DF6003D6B47 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -156,9 +168,11 @@
 			isa = PBXGroup;
 			children = (
 				BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */,
+				BD8878371F8A093800AE36FD /* AddContactTableViewCell.swift */,
 				BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */,
 				BD82B2471F86884300CE30DA /* AddToCartView.swift */,
 				BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */,
+				BD8878331F89DC4400AE36FD /* NewAddressTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +213,7 @@
 				BDC500E81F7B4DDE00660B3E /* GoogleService-Info.plist */,
 				BDF4F1F61F7C68F00012AAD3 /* ColorExtension.swift */,
 				BD09B6ED1F821A050018D6C2 /* StringExtension.swift */,
+				BD8788B51F8940D100ED3617 /* LocationManager.swift */,
 				BDD67B2E1F78B0D1001E939E /* AppDelegate.swift */,
 				BDD1457E1F7F6DF6003D6B47 /* Interactor.swift */,
 				BDD67B321F78B0D1001E939E /* Main.storyboard */,
@@ -258,6 +273,8 @@
 				BDF4F1F31F7C642E0012AAD3 /* Sign Up */,
 				BD82B2411F86131200CE30DA /* ProductViewController.swift */,
 				BD8788B11F884D1F00ED3617 /* CartViewController.swift */,
+				BD8878391F8A094B00AE36FD /* AddContactViewController.swift */,
+				BD8878351F89DCE500AE36FD /* AddressChangeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				BDF4F1F81F7C73370012AAD3 /* User.swift */,
+				BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */,
 				BD09B6EB1F820A640018D6C2 /* Category.swift */,
 				BD82B2431F86167C00CE30DA /* Product.swift */,
 				BD82B24B1F87559A00CE30DA /* Cart.swift */,
@@ -552,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6529AD1F8B0A5C00BB9D49 /* Contact.swift in Sources */,
 				BD8788B41F884D9700ED3617 /* CartTableViewCell.swift in Sources */,
 				BDF4F1EA1F7C0C080012AAD3 /* LoginViewController.swift in Sources */,
 				BDF4F1F21F7C0C370012AAD3 /* PasswordViewController.swift in Sources */,
@@ -562,16 +581,21 @@
 				BD82B2441F86167C00CE30DA /* Product.swift in Sources */,
 				BDF4F1E81F7C0BFB0012AAD3 /* SignUpPageViewController.swift in Sources */,
 				BD82B2421F86131200CE30DA /* ProductViewController.swift in Sources */,
+				BD8878381F8A093800AE36FD /* AddContactTableViewCell.swift in Sources */,
 				BD09B6E91F8206900018D6C2 /* HomeCollectionViewCell.swift in Sources */,
 				BDD67B2F1F78B0D1001E939E /* AppDelegate.swift in Sources */,
 				BDD1457F1F7F6DF7003D6B47 /* Interactor.swift in Sources */,
 				BD8788B21F884D2000ED3617 /* CartViewController.swift in Sources */,
+				BD8788B61F8940D100ED3617 /* LocationManager.swift in Sources */,
 				BD82B2481F86884300CE30DA /* AddToCartView.swift in Sources */,
 				BD09B6EE1F821A050018D6C2 /* StringExtension.swift in Sources */,
 				BDD1457A1F7E1FF8003D6B47 /* HomeViewController.swift in Sources */,
 				BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */,
 				BDF4F1EC1F7C0C180012AAD3 /* NameViewController.swift in Sources */,
 				BDF4F1F91F7C73370012AAD3 /* User.swift in Sources */,
+				BD8878361F89DCE500AE36FD /* AddressChangeViewController.swift in Sources */,
+				BD88783A1F8A094B00AE36FD /* AddContactViewController.swift in Sources */,
+				BD8878341F89DC4400AE36FD /* NewAddressTableViewCell.swift in Sources */,
 				BDF4F1F01F7C0C2B0012AAD3 /* PhoneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
