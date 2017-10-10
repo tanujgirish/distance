@@ -788,6 +788,91 @@
             </objects>
             <point key="canvasLocation" x="8848.7999999999993" y="-276.61169415292358"/>
         </scene>
+        <!--Detailed Address View Controller-->
+        <scene sceneID="5Rd-qI-6em">
+            <objects>
+                <viewController storyboardIdentifier="detailedaddressvc" id="6HM-3A-Esh" customClass="DetailedAddressViewController" customModule="Distance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VoA-4q-evD"/>
+                        <viewControllerLayoutGuide type="bottom" id="jOv-mh-rA0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b4c-Q0-ho0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GgJ-Vp-S7R">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P89-tn-AdE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </mapView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5W-fl-vkV">
+                                        <rect key="frame" x="36" y="172" width="303" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="APT OR SUITE OR ROOM NUMBER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-fB-o7N">
+                                        <rect key="frame" x="36" y="150" width="303" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gzJ-Wg-GgS">
+                                        <rect key="frame" x="36" y="209" width="303" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LcT-nH-H0x">
+                                        <rect key="frame" x="36" y="254" width="303" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BUILDING NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwC-Jf-Lid">
+                                        <rect key="frame" x="36" y="232" width="303" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0NB-Aj-VWw">
+                                        <rect key="frame" x="36" y="291" width="303" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="y4T-hC-6VN">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="Tyz-t8-KUr">
+                            <color key="tintColor" red="1" green="0.21960784310000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveAction:" destination="6HM-3A-Esh" id="gJN-Dk-EKk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buildingLabel" destination="vwC-Jf-Lid" id="xLd-fM-U6e"/>
+                        <outlet property="buildingSeperator" destination="0NB-Aj-VWw" id="l7k-Ok-oVU"/>
+                        <outlet property="buildingTextField" destination="LcT-nH-H0x" id="TM1-zJ-xpm"/>
+                        <outlet property="mapView" destination="P89-tn-AdE" id="faO-Va-gSu"/>
+                        <outlet property="numberLabel" destination="jOP-fB-o7N" id="sHh-M0-BFI"/>
+                        <outlet property="numberSeperator" destination="gzJ-Wg-GgS" id="Bkh-O3-xgS"/>
+                        <outlet property="numberTextField" destination="c5W-fl-vkV" id="C4V-OS-LLp"/>
+                        <outlet property="saveButton" destination="Tyz-t8-KUr" id="cLw-9x-r7v"/>
+                        <outlet property="scrollView" destination="GgJ-Vp-S7R" id="fuR-sJ-O7M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7g-tI-0gF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8848.7999999999993" y="436.73163418290858"/>
+        </scene>
         <!--Product View Controller-->
         <scene sceneID="Zwb-tF-z6G">
             <objects>
@@ -1132,6 +1217,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvr-Ha-yeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8031" y="-278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ze1-n1-g4u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mgu-Pd-nqJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3p6-t7-agq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6HM-3A-Esh" kind="relationship" relationship="rootViewController" id="T0C-oo-NDg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAH-H3-97a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8030" y="437"/>
         </scene>
     </scenes>
     <resources>

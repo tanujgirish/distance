@@ -14,6 +14,7 @@
 		BD6529AD1F8B0A5C00BB9D49 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */; };
 		BD6529AF1F8B4C8900BB9D49 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */; };
 		BD6529B11F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */; };
+		BD736F2E1F8C439D0012FE85 /* DetailedAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD736F2D1F8C439D0012FE85 /* DetailedAddressViewController.swift */; };
 		BD82B2401F8612B900CE30DA /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */; };
 		BD82B2421F86131200CE30DA /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2411F86131200CE30DA /* ProductViewController.swift */; };
 		BD82B2441F86167C00CE30DA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82B2431F86167C00CE30DA /* Product.swift */; };
@@ -79,6 +80,7 @@
 		BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
 		BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchTableViewCell.swift; sourceTree = "<group>"; };
+		BD736F2D1F8C439D0012FE85 /* DetailedAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedAddressViewController.swift; sourceTree = "<group>"; };
 		BD82B23F1F8612B900CE30DA /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		BD82B2411F86131200CE30DA /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BD82B2431F86167C00CE30DA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				BDF4F1F31F7C642E0012AAD3 /* Sign Up */,
 				BD82B2411F86131200CE30DA /* ProductViewController.swift */,
 				BD8788B11F884D1F00ED3617 /* CartViewController.swift */,
+				BD736F2D1F8C439D0012FE85 /* DetailedAddressViewController.swift */,
 				BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */,
 				BD8878391F8A094B00AE36FD /* AddContactViewController.swift */,
 				BD8878351F89DCE500AE36FD /* AddressChangeViewController.swift */,
@@ -599,6 +602,7 @@
 				BD09B6EE1F821A050018D6C2 /* StringExtension.swift in Sources */,
 				BDD1457A1F7E1FF8003D6B47 /* HomeViewController.swift in Sources */,
 				BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */,
+				BD736F2E1F8C439D0012FE85 /* DetailedAddressViewController.swift in Sources */,
 				BDF4F1EC1F7C0C180012AAD3 /* NameViewController.swift in Sources */,
 				BDF4F1F91F7C73370012AAD3 /* User.swift in Sources */,
 				BD8878361F89DCE500AE36FD /* AddressChangeViewController.swift in Sources */,

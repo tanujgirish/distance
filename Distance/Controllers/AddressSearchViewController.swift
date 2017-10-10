@@ -17,13 +17,18 @@ class AddressSearchViewController: UIViewController {
     
     var searching = false
     
+    var currentLoc: String!
+    
     var searchCompleter = MKLocalSearchCompleter()
     var searchResults = [MKLocalSearchCompletion]()
+    
+    var contact: Contact!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.placeholder = "Search for an address"
         searchBar.showsCancelButton = true
+        searchBar.autocapitalizationType = .words
         
         
         let attributes: [String: Any] = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.FlatColor.red]
@@ -55,6 +60,42 @@ class AddressSearchViewController: UIViewController {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func getCurrentLocation() {
+        LocationManager.shared.getLocation { (location) in
+            if location == nil {
+                return
+            }
+            CLGeocoder().reverseGeocodeLocation(location!, completionHandler: { (placemarks, error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                let placemark = placemarks!.first!
+                let address = "\(placemark.subThoroughfare!) \(placemark.thoroughfare!), \(placemark.postalCode!)"
+                self.currentLoc = address
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.presentDetailedAddressVC(placemark)
+                }
+            })
+        }
+    }
+    
+    func generateLocationPlacemark(_ selectedLoc: MKLocalSearchCompletion) {
+        CLGeocoder().geocodeAddressString("\(selectedLoc.title), \(selectedLoc.subtitle)") { (placemarks, error) in
+            guard let placemark = placemarks?.first else { return }
+            self.searchBar.resignFirstResponder()
+            self.presentDetailedAddressVC(placemark)
+        }
+    }
+    
+    func presentDetailedAddressVC(_ locationPlacemark: CLPlacemark) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailedaddressvc") as! DetailedAddressViewController
+        vc.placemark = locationPlacemark
+        vc.contact = self.contact
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
@@ -71,22 +112,62 @@ extension AddressSearchViewController: UITableViewDelegate, UITableViewDataSourc
         let cell: AddressSearchTableViewCell = tableView.dequeueReusableCell(withIdentifier: "addresssearchcell", for: indexPath) as! AddressSearchTableViewCell
         
         cell.separatorInset = UIEdgeInsets(top: 0, left: cell.primaryLabel.frame.origin.x, bottom: 0, right: 0)
+        cell.selectionStyle = .none
         
         if searching {
             
+            var myMutableString = NSMutableAttributedString()
+            
+            
             let searchResult = searchResults[indexPath.row]
-            cell.primaryLabel.text = searchResult.title
+            
+            
+            myMutableString = NSMutableAttributedString(string: searchResult.title)
+            //NSRange(location:12,length:8)
+            if let range = (searchResult.title as NSString).range(of: searchBar.text!) as? NSRange {
+                myMutableString.setAttributes([NSAttributedStringKey.foregroundColor: UIColor.FlatColor.red], range: range)
+            }
+            
+            cell.primaryLabel.attributedText = myMutableString
             cell.secondaryLabel.text = searchResult.subtitle
             cell.typeImageView.image = #imageLiteral(resourceName: "general-loc")
+            
         } else {
             
-            cell.primaryLabel.text = "Get Current Location"
-            cell.secondaryLabel.text = "We'll try to find the closest location"
-            cell.typeImageView.image = #imageLiteral(resourceName: "current-loc")
+            if currentLoc == nil {
+                
+                cell.primaryLabel.text = "Get Current Location"
+                cell.secondaryLabel.text = "We'll try to find the closest location"
+                cell.typeImageView.image = #imageLiteral(resourceName: "current-loc")
+                
+            } else {
+                
+                cell.primaryLabel.text = "Current Location"
+                cell.secondaryLabel.text = currentLoc
+                
+            }
             
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! AddressSearchTableViewCell
+        
+        if searching {
+            
+            let selectedLoc = self.searchResults[indexPath.row]
+            self.generateLocationPlacemark(selectedLoc)
+            
+        } else {
+            
+            cell.primaryLabel.text = "Getting Current Location"
+            cell.secondaryLabel.text = "Positioning our satellite"
+            self.getCurrentLocation()
+            
+        }
     }
 }
 

@@ -31,7 +31,9 @@ class AddressChangeViewController: UIViewController {
         let ref = Database.database().reference().child("saved-contacts").child(uid)
         ref.observe(.childAdded) { (snapshot) in
             let uid = snapshot.key
-            self.retrieveExistingUser(uid)
+            if(uid.first != "-") {
+                self.retrieveExistingUser(uid)
+            }
         }
     }
     
