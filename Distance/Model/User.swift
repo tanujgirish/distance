@@ -15,6 +15,7 @@ class User: NSObject {
     var phone: String!
     var password: String!
     var id: String!
+    var address: Address!
     
     override init() {
         super.init()

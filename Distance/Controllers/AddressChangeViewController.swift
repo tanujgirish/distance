@@ -31,7 +31,11 @@ class AddressChangeViewController: UIViewController {
         let ref = Database.database().reference().child("saved-contacts").child(uid)
         ref.observe(.childAdded) { (snapshot) in
             let uid = snapshot.key
-            if(uid.first != "-") {
+            if snapshot.hasChildren() {
+                if let dictionary = snapshot.value as? [String: Any] {
+                    self.readNonUser(dictionary)
+                }
+            } else {
                 self.retrieveExistingUser(uid)
             }
         }
@@ -39,8 +43,9 @@ class AddressChangeViewController: UIViewController {
     
     func retrieveExistingUser(_ uid: String) {
         let ref = Database.database().reference().child("users").child(uid)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.observe(.value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
+                print(dictionary)
                 let user = User(dictionary: dictionary, id: uid)
                 self.users.append(user)
                 DispatchQueue.main.async {
@@ -48,6 +53,17 @@ class AddressChangeViewController: UIViewController {
                 }
             }
         }, withCancel: nil)
+    }
+    
+    func readNonUser(_ dictionary: [String: Any]) {
+        let user = User()
+        let address = Address(dictionary: dictionary)
+        user.name = dictionary["name"] as! String
+        user.address = address
+        self.users.append(user)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -77,9 +93,12 @@ extension AddressChangeViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.row == users.count {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "addcontactvc") as! AddContactViewController
             self.navigationController?.pushViewController(vc, animated: true)
-        
+        } else {
+            Recipient.sharedInstance.selectedUser = users[indexPath.row]
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

@@ -66,6 +66,7 @@ PODS:
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
   - SnapKit (4.0.0)
+  - Stripe (11.3.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - iCarousel
   - SDWebImage (~> 4.0)
   - SnapKit (~> 4.0.0)
+  - Stripe
 
 SPEC CHECKSUMS:
   Firebase: 9548cae14d69718add12d75a5b312893f7ef89c7
@@ -94,7 +96,8 @@ SPEC CHECKSUMS:
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Stripe: 3c86dc18af21e59dd559aa15e83cb501248f9903
 
-PODFILE CHECKSUM: 950aa1be65d4100d5bdb8802435ea4e29219c38f
+PODFILE CHECKSUM: d8ec2355d7a2fcaf3166609a6a0a4dcd174515e1
 
 COCOAPODS: 1.2.0

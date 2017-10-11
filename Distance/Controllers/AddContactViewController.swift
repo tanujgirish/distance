@@ -89,7 +89,9 @@ class AddContactViewController: UIViewController {
                             self.existingUsers.append(user)
                             
                         } else {
+                            
                             self.nonUserContacts.append(contact)
+                            
                         }
                     }
                     DispatchQueue.main.async {
@@ -139,6 +141,7 @@ class AddContactViewController: UIViewController {
     func presentSearchAddress(_ selectedContact: Contact) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "serachaddressvc") as! AddressSearchViewController
         vc.contact = selectedContact
+        vc.contactPage = self
         let navController = UINavigationController(rootViewController: vc)
         self.present(navController, animated: true, completion: nil)
     }

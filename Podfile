@@ -14,6 +14,7 @@ target 'Distance' do
   pod ‘iCarousel’
   pod 'SDWebImage', '~> 4.0'
   pod 'SnapKit', '~> 4.0.0'
+  pod 'Stripe'
 
   target 'DistanceTests' do
     inherit! :search_paths

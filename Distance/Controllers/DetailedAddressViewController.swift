@@ -29,6 +29,8 @@ class DetailedAddressViewController: UIViewController {
     var placemark: CLPlacemark!
     var contact: Contact!
     
+    var contactPage = AddContactViewController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +60,9 @@ class DetailedAddressViewController: UIViewController {
     
     func saveNonUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let address = "\(placemark.subThoroughfare!) \(placemark.thoroughfare!), \(placemark.postalCode!)"
+        let address = "\(placemark.subThoroughfare!) \(placemark.thoroughfare!) \(placemark.locality!), \(placemark.administrativeArea!) \(placemark.postalCode!)"
         let ref = Database.database().reference().child("saved-contacts").child(uid).childByAutoId()
-        let values: [String: Any] = ["name": contact.name, "address": address, "number": numberTextField.text, "building": buildingTextField.text]
+        let values: [String: Any] = ["name": contact.name, "address": address, "number": numberTextField.text, "building": buildingTextField.text, "phone": contact.phoneNumber]
         ref.updateChildValues(values) { (error, ref) in
             if error != nil {
                 print(error)
@@ -71,7 +73,9 @@ class DetailedAddressViewController: UIViewController {
     }
     
     func saveComplete() {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.contactPage.navigationController?.popToRootViewController(animated: true)
+        }
     }
 
     @IBAction func saveAction(_ sender: UIBarButtonItem) {

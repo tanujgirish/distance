@@ -23,6 +23,7 @@ class AddressSearchViewController: UIViewController {
     var searchResults = [MKLocalSearchCompletion]()
     
     var contact: Contact!
+    var contactPage = AddContactViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +95,7 @@ class AddressSearchViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailedaddressvc") as! DetailedAddressViewController
         vc.placemark = locationPlacemark
         vc.contact = self.contact
+        vc.contactPage = contactPage
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

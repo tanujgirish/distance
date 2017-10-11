@@ -17,12 +17,14 @@ class CartViewController: UIViewController {
     
     var cartView: AddToCartView!
     var dimView: UIView!
+    @IBOutlet weak var checkoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        checkoutButton.addTarget(self, action: #selector(presentCheckout(_:)), for: .touchUpInside)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +34,10 @@ class CartViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    @objc func presentCheckout(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "checkoutvc") as! CheckOutViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     private func calculateSubTotal() -> Double {
         var subtotal = Double()
