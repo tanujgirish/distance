@@ -8,11 +8,15 @@
 
 import UIKit
 import Firebase
+import Stripe
+import Alamofire
 
 class SignUpPageViewController: UIPageViewController {
     
     var newUser = User()
     var currentIndex = Int()
+    var customer = STPCustomer()
+    
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [
@@ -138,9 +142,39 @@ class SignUpPageViewController: UIPageViewController {
                 return
             }
             //phone verification will do later.
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! UITabBarController
-            self.present(vc, animated: true, completion: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "phoneverificationvc") as! PhoneVerificationViewController
+            vc.phoneNumber = self.newUser.phone!
+            self.navigationController?.pushViewController(vc, animated: true)
+            //self.present(vc, animated: true, completion: nil)
         }
+    }
+    
+    func createCustomer() {
+        
+    }
+    
+    func saveAuthCodeToUser(_ uid: String) {
+        let authCode = randomNumberWith(digits: 4)
+        let ref = Database.database().reference().child("users").child(uid)
+        let values = ["PhoneVerificationCode": authCode]
+        ref.updateChildValues(values) { (error, ref) in
+            if error != nil {
+                print(error)
+                return
+            }
+            self.authorizePhoneNumber()
+            //make api call to send auth code
+        }
+    }
+    
+    func authorizePhoneNumber() {
+        
+    }
+
+    private func randomNumberWith(digits: Int) -> Int {
+        let min = Int(pow(Double(10), Double(digits-1))) - 1
+        let max = Int(pow(Double(10), Double(digits))) - 1
+        return Int(Range(uncheckedBounds: (min, max)))
     }
     
 }

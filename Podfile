@@ -13,8 +13,9 @@ target 'Distance' do
   pod 'Firebase/Messaging'
   pod ‘iCarousel’
   pod 'SDWebImage', '~> 4.0'
-  pod 'SnapKit', '~> 4.0.0'
   pod 'Stripe'
+  pod 'SnapKit', '~> 4.0.0'
+  pod ‘Alamofire’
 
   target 'DistanceTests' do
     inherit! :search_paths

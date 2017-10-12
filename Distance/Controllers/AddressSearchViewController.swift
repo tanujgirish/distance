@@ -32,7 +32,7 @@ class AddressSearchViewController: UIViewController {
         searchBar.autocapitalizationType = .words
         
         
-        let attributes: [String: Any] = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.FlatColor.red]
+        let attributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor : UIColor.FlatColor.red]
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(attributes, for: .normal)
         
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "Avenir-Book", size: 17.0)

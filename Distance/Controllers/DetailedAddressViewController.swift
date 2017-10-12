@@ -36,7 +36,7 @@ class DetailedAddressViewController: UIViewController {
         super.viewDidLoad()
         let address = "\(placemark.subThoroughfare!) \(placemark.thoroughfare!), \(placemark.postalCode!)"
         self.navigationItem.title = address
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font.rawValue: UIFont(name: "Avenir-Medium", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "Avenir-Medium", size: 17)!]
         setUpMap()
     }
     

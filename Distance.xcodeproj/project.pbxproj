@@ -11,6 +11,8 @@
 		BD09B6E91F8206900018D6C2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */; };
 		BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6EB1F820A640018D6C2 /* Category.swift */; };
 		BD09B6EE1F821A050018D6C2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6ED1F821A050018D6C2 /* StringExtension.swift */; };
+		BD3961911F8F62EB00A884A2 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3961901F8F62EB00A884A2 /* IntExtension.swift */; };
+		BD5DBC1A1F8F25DE009E4411 /* PhoneVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DBC191F8F25DE009E4411 /* PhoneVerificationViewController.swift */; };
 		BD6529AD1F8B0A5C00BB9D49 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */; };
 		BD6529AF1F8B4C8900BB9D49 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */; };
 		BD6529B11F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */; };
@@ -82,6 +84,8 @@
 		BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD09B6EB1F820A640018D6C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BD09B6ED1F821A050018D6C2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BD3961901F8F62EB00A884A2 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		BD5DBC191F8F25DE009E4411 /* PhoneVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewController.swift; sourceTree = "<group>"; };
 		BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
 		BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		BD9AE7CC1F8D9E3100E2C52C /* RecipientInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientInfoViewController.swift; sourceTree = "<group>"; };
 		BD9AE7CE1F8DC7F600E2C52C /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
 		BD9AE7D01F8DC8F200E2C52C /* CheckOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutTableViewCell.swift; sourceTree = "<group>"; };
+		BD9AE7D21F8E08CA00E2C52C /* Distance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Distance.entitlements; sourceTree = "<group>"; };
 		BDC500E81F7B4DDE00660B3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BDD145791F7E1FF8003D6B47 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDD1457E1F7F6DF6003D6B47 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -228,8 +233,10 @@
 		BDD67B2D1F78B0D1001E939E /* Distance */ = {
 			isa = PBXGroup;
 			children = (
+				BD9AE7D21F8E08CA00E2C52C /* Distance.entitlements */,
 				BDC500E81F7B4DDE00660B3E /* GoogleService-Info.plist */,
 				BDF4F1F61F7C68F00012AAD3 /* ColorExtension.swift */,
+				BD3961901F8F62EB00A884A2 /* IntExtension.swift */,
 				BD09B6ED1F821A050018D6C2 /* StringExtension.swift */,
 				BD8788B51F8940D100ED3617 /* LocationManager.swift */,
 				BDD67B2E1F78B0D1001E939E /* AppDelegate.swift */,
@@ -268,6 +275,7 @@
 			children = (
 				BDF4F1EF1F7C0C2B0012AAD3 /* PhoneViewController.swift */,
 				BDF4F1ED1F7C0C230012AAD3 /* EmailViewController.swift */,
+				BD5DBC191F8F25DE009E4411 /* PhoneVerificationViewController.swift */,
 				BDF4F1F11F7C0C370012AAD3 /* PasswordViewController.swift */,
 				BDF4F1EB1F7C0C180012AAD3 /* NameViewController.swift */,
 				BDF4F1E71F7C0BFB0012AAD3 /* SignUpPageViewController.swift */,
@@ -392,6 +400,11 @@
 				TargetAttributes = {
 					BDD67B2A1F78B0D1001E939E = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
 					};
 					BDD67B3E1F78B0D1001E939E = {
 						CreatedOnToolsVersion = 9.0;
@@ -622,10 +635,12 @@
 				BDD1457A1F7E1FF8003D6B47 /* HomeViewController.swift in Sources */,
 				BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */,
 				BD736F2E1F8C439D0012FE85 /* DetailedAddressViewController.swift in Sources */,
+				BD5DBC1A1F8F25DE009E4411 /* PhoneVerificationViewController.swift in Sources */,
 				BDF4F1EC1F7C0C180012AAD3 /* NameViewController.swift in Sources */,
 				BDF4F1F91F7C73370012AAD3 /* User.swift in Sources */,
 				BD9AE7C91F8CA7F200E2C52C /* Address.swift in Sources */,
 				BD8878361F89DCE500AE36FD /* AddressChangeViewController.swift in Sources */,
+				BD3961911F8F62EB00A884A2 /* IntExtension.swift in Sources */,
 				BD88783A1F8A094B00AE36FD /* AddContactViewController.swift in Sources */,
 				BD8878341F89DC4400AE36FD /* NewAddressTableViewCell.swift in Sources */,
 				BDF4F1F01F7C0C2B0012AAD3 /* PhoneViewController.swift in Sources */,
@@ -791,6 +806,7 @@
 			baseConfigurationReference = 31EBAF13CA82CBDB6B7CE60A /* Pods-Distance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Distance/Distance.entitlements;
 				DEVELOPMENT_TEAM = QV8DEMBUXV;
 				INFOPLIST_FILE = Distance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -807,6 +823,7 @@
 			baseConfigurationReference = C9361FB799A42BF5A7F3EAE0 /* Pods-Distance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Distance/Distance.entitlements;
 				DEVELOPMENT_TEAM = QV8DEMBUXV;
 				INFOPLIST_FILE = Distance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -106,9 +106,9 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             
-            cell.subtotalPriceLabel.text = "$\(calculateSubTotal())"
+            cell.subtotalPriceLabel.text = String(format: "%.02f", calculateSubTotal())
             cell.deliveryPriceLabel.text = "$2.00"
-            cell.totalPriceLabel.text = "$\(calculateTotal())"
+            cell.totalPriceLabel.text = String(format: "%.02f", calculateTotal())
             
             cell.selectionStyle = .none
             

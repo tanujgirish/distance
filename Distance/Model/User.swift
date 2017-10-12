@@ -16,6 +16,7 @@ class User: NSObject {
     var password: String!
     var id: String!
     var address: Address!
+    var stripeCustomerId: String!
     
     override init() {
         super.init()
@@ -23,9 +24,20 @@ class User: NSObject {
     
     init(dictionary: [String: Any], id: String) {
         super.init()
-        name = dictionary["name"] as? String
-        email = dictionary["email"] as? String
+        self.name = dictionary["name"] as? String
+        self.email = dictionary["email"] as? String
         self.id = id
-        phone = dictionary["phone"] as? String
+        self.phone = dictionary["phone"] as? String
+        self.stripeCustomerId = dictionary["stripeCustomerId"] as? String
+    }
+}
+
+class CurrentUser {
+    static let sharedInstance = CurrentUser()
+    private init() {}
+    var currenUser: User!
+    
+    func updateUserObj() {
+        
     }
 }

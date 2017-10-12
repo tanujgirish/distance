@@ -18,4 +18,5 @@ class CartManager {
         products[product] = quantity
         print(products)
     }
+    
 }
