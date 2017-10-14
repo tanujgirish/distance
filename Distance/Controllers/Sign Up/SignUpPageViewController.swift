@@ -22,8 +22,8 @@ class SignUpPageViewController: UIPageViewController {
         return [
             self.newViewControllers(id: "name"),
             self.newViewControllers(id: "email"),
-            self.newViewControllers(id: "phone"),
-            self.newViewControllers(id: "password")
+            self.newViewControllers(id: "password"),
+            self.newViewControllers(id: "phone")
         ]
     }()
     
@@ -49,8 +49,8 @@ class SignUpPageViewController: UIPageViewController {
         dataSource = self
         if let nameViewController = orderedViewControllers.first as? NameViewController,
             let emailViewController = orderedViewControllers[1] as? EmailViewController,
-            let phoneViewController = orderedViewControllers[2] as? PhoneNumberViewController,
-            let passwordViewController = orderedViewControllers.last as? PasswordViewController {
+            let passwordViewController = orderedViewControllers[2] as? PasswordViewController,
+            let phoneViewController = orderedViewControllers.last as? PhoneNumberViewController {
             
             nameViewController.signupPageVC = self
             emailViewController.signupPageVC = self
@@ -121,7 +121,7 @@ class SignUpPageViewController: UIPageViewController {
     }
     
     func completeSignUp() {
-        Auth.auth().createUser(withEmail: newUser.email!, password: newUser.password!) { (user, error) in
+        Auth.auth().createUser(withEmail: "\(newUser.phone!)@distance.com", password: newUser.password!) { (user, error) in
             if error != nil {
                 print(error)
                 return
@@ -141,41 +141,51 @@ class SignUpPageViewController: UIPageViewController {
                 print(error)
                 return
             }
-            //phone verification will do later.
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "phoneverificationvc") as! PhoneVerificationViewController
-            vc.phoneNumber = self.newUser.phone!
-            self.navigationController?.pushViewController(vc, animated: true)
-            //self.present(vc, animated: true, completion: nil)
+            self.createCustomer(uid)
         }
     }
     
-    func createCustomer() {
+    func createCustomer(_ uid: String) {
+        let url = "https://us-central1-distance-c3c4a.cloudfunctions.net/CreateNewStripeCustomer"
+        let parameters: [String: Any] = ["uid": uid, "email": newUser.email!]
         
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            switch response.response?.statusCode {
+            case 200?:
+                if let stripeId = String(data: response.data!, encoding: .utf8) as? String {
+                    self.saveStripeCustomerId(stripeCustomerId: stripeId, uid: uid)
+                }
+            case 400?:
+                print(response.data)
+            default:
+                print(response.data)
+            }
+        }
     }
     
-    func saveAuthCodeToUser(_ uid: String) {
-        let authCode = randomNumberWith(digits: 4)
+    func saveStripeCustomerId(stripeCustomerId: String, uid: String) {
         let ref = Database.database().reference().child("users").child(uid)
-        let values = ["PhoneVerificationCode": authCode]
+        let values = ["stripeCustomerId": stripeCustomerId]
         ref.updateChildValues(values) { (error, ref) in
             if error != nil {
                 print(error)
                 return
             }
-            self.authorizePhoneNumber()
-            //make api call to send auth code
+            DispatchQueue.main.async {
+                self.presentPhoneVerificationVC()
+            }
         }
     }
     
-    func authorizePhoneNumber() {
-        
+    
+    
+    private func presentPhoneVerificationVC() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "phoneverificationvc") as! PhoneVerificationViewController
+        vc.phoneNumber = self.newUser.phone!
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-
-    private func randomNumberWith(digits: Int) -> Int {
-        let min = Int(pow(Double(10), Double(digits-1))) - 1
-        let max = Int(pow(Double(10), Double(digits))) - 1
-        return Int(Range(uncheckedBounds: (min, max)))
-    }
+    
+    
     
 }
 

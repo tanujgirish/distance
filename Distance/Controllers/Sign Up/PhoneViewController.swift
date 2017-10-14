@@ -44,8 +44,8 @@ class PhoneNumberViewController: UIViewController {
         } else {
             let trimmedString = phoneNumberTextField.text?.replacingOccurrences(of: " ", with: "")
             if self.validate(phoneNumber: trimmedString!) {
-                self.signupPageVC.nextPage()
                 self.signupPageVC.newUser.phone = trimmedString
+                self.signupPageVC.completeSignUp()
             } else {
                 phoneNumberIndi.backgroundColor = UIColor.FlatColor.red
             }

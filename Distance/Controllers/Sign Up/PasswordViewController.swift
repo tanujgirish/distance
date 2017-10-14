@@ -45,7 +45,7 @@ class PasswordViewController: UIViewController {
     @objc func nextPage() {
         if (passwordField.text?.characters.count)! >= 6 && validatePassword(candidate: passwordField.text!) {
             self.signupPageVC.newUser.password = self.passwordField.text
-            self.signupPageVC.completeSignUp()
+            self.signupPageVC.nextPage()
             passwordIndi.backgroundColor = UIColor.black
         } else {
             passwordIndi.backgroundColor = UIColor.FlatColor.red

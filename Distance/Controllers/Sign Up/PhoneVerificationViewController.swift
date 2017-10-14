@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Firebase
+import Alamofire
 
 class PhoneVerificationViewController: UIViewController {
     
@@ -26,6 +28,7 @@ class PhoneVerificationViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     var phoneNumber = String()
+    var authCode = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +85,64 @@ class PhoneVerificationViewController: UIViewController {
         descriptionTextView.attributedText = myMutableString
         
         addTextFieldViews()
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        self.saveAuthCodeToUser(uid)
+    }
+    
+    func saveAuthCodeToUser(_ uid: String) {
+        authCode = randomNumberWith(digits: 4)
+        let ref = Database.database().reference().child("users").child(uid)
+        let values = ["PhoneVerified": 0]
+        ref.updateChildValues(values) { (error, ref) in
+            if error != nil {
+                print(error)
+                return
+            }
+            //make api call to send auth code
+            self.sendAuthCode()
+        }
+    }
+    
+    func sendAuthCode() {
+        let url = "https://us-central1-distance-c3c4a.cloudfunctions.net/PhoneVerification"
+        let parameters: [String: Any] = ["toPhoneNumber": self.phoneNumber, "authCode": self.authCode]
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            switch response.response?.statusCode {
+            case 200?:
+                print(response.data)
+            case 400?:
+                print(response.data)
+            default:
+                print(response.data)
+            }
+        }
+    }
+    
+    func authorizeCode() {
+        if combinedEntries() == self.authCode {
+            DispatchQueue.main.async {
+                self.presentTabBar()
+            }
+        } else {
+            print("WRONG CODE")
+        }
+    }
+    
+    func presentTabBar() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! UITabBarController
+        let rootVC = UINavigationController(rootViewController: vc)
+        self.present(rootVC, animated: true, completion: nil)
+    }
+    
+    private func combinedEntries() -> Int {
+        return Int("\(numberOne.text!)\(numberTwo.text!)\(numberThree.text!)\(numberFour.text!)")!
+    }
+    
+    private func randomNumberWith(digits: Int) -> Int {
+        let min = Int(pow(Double(10), Double(digits-1))) - 1
+        let max = Int(pow(Double(10), Double(digits))) - 1
+        return Int(Range(uncheckedBounds: (min, max)))
     }
     
     func addTextFieldViews() {
@@ -123,6 +184,7 @@ class PhoneVerificationViewController: UIViewController {
             numberFour.becomeFirstResponder()
         case numberFour:
             numberFour.resignFirstResponder()
+            self.authorizeCode()
         default:
             break
         }
