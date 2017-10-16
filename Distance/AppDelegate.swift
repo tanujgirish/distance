@@ -20,9 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         STPPaymentConfiguration.shared().publishableKey = "pk_test_V4s1GqQFRRJG5Tm01tAmta0r"
         STPPaymentConfiguration.shared().appleMerchantIdentifier = "merchant.zeroDistance"
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let rootController = storyboard.instantiateViewController(withIdentifier: "root") as! UINavigationController
+        
+        if (Auth.auth().currentUser != nil) {
+            
+//            if let window = self.window {
+//                window.rootViewController = rootController
+//            }
+            CurrentUser.sharedInstance.updateUserObj()
+        }
+        
         return true
     }
 
+    private func updateCurrentUser() {
+        
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

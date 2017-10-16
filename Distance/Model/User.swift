@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class User: NSObject {
     
@@ -35,9 +36,15 @@ class User: NSObject {
 class CurrentUser {
     static let sharedInstance = CurrentUser()
     private init() {}
-    var currenUser: User!
+    var currentUser: User!
     
     func updateUserObj() {
-        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference().child("users").child(uid)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: Any] {
+                self.currentUser = User(dictionary: dictionary, id: uid)
+            }
+        }, withCancel: nil)
     }
 }

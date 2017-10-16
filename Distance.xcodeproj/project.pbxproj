@@ -11,7 +11,13 @@
 		BD09B6E91F8206900018D6C2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */; };
 		BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6EB1F820A640018D6C2 /* Category.swift */; };
 		BD09B6EE1F821A050018D6C2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09B6ED1F821A050018D6C2 /* StringExtension.swift */; };
+		BD36F6E71F9418FC000B7E7F /* AddPayementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD36F6E61F9418FC000B7E7F /* AddPayementViewController.swift */; };
 		BD3961911F8F62EB00A884A2 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3961901F8F62EB00A884A2 /* IntExtension.swift */; };
+		BD3961931F91C39100A884A2 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3961921F91C39100A884A2 /* StartViewController.swift */; };
+		BD5AA3EF1F92E63B00A39619 /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5AA3EE1F92E63B00A39619 /* NavigationExtension.swift */; };
+		BD5AA3F11F93040C00A39619 /* PaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5AA3F01F93040C00A39619 /* PaymentOptionsViewController.swift */; };
+		BD5AA3F31F93084800A39619 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5AA3F21F93084800A39619 /* Payment.swift */; };
+		BD5AA3F51F93127F00A39619 /* PaymentOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5AA3F41F93127F00A39619 /* PaymentOptionsTableViewCell.swift */; };
 		BD5DBC1A1F8F25DE009E4411 /* PhoneVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DBC191F8F25DE009E4411 /* PhoneVerificationViewController.swift */; };
 		BD6529AD1F8B0A5C00BB9D49 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */; };
 		BD6529AF1F8B4C8900BB9D49 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */; };
@@ -84,7 +90,13 @@
 		BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD09B6EB1F820A640018D6C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BD09B6ED1F821A050018D6C2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BD36F6E61F9418FC000B7E7F /* AddPayementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPayementViewController.swift; sourceTree = "<group>"; };
 		BD3961901F8F62EB00A884A2 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		BD3961921F91C39100A884A2 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		BD5AA3EE1F92E63B00A39619 /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
+		BD5AA3F01F93040C00A39619 /* PaymentOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsViewController.swift; sourceTree = "<group>"; };
+		BD5AA3F21F93084800A39619 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		BD5AA3F41F93127F00A39619 /* PaymentOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		BD5DBC191F8F25DE009E4411 /* PhoneVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewController.swift; sourceTree = "<group>"; };
 		BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 			children = (
 				BD09B6E81F8206900018D6C2 /* HomeCollectionViewCell.swift */,
 				BD9AE7D01F8DC8F200E2C52C /* CheckOutTableViewCell.swift */,
+				BD5AA3F41F93127F00A39619 /* PaymentOptionsTableViewCell.swift */,
 				BD6529B01F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift */,
 				BD8878371F8A093800AE36FD /* AddContactTableViewCell.swift */,
 				BD8788B31F884D9700ED3617 /* CartTableViewCell.swift */,
@@ -238,10 +251,12 @@
 				BDF4F1F61F7C68F00012AAD3 /* ColorExtension.swift */,
 				BD3961901F8F62EB00A884A2 /* IntExtension.swift */,
 				BD09B6ED1F821A050018D6C2 /* StringExtension.swift */,
+				BD5AA3EE1F92E63B00A39619 /* NavigationExtension.swift */,
 				BD8788B51F8940D100ED3617 /* LocationManager.swift */,
 				BDD67B2E1F78B0D1001E939E /* AppDelegate.swift */,
 				BDD1457E1F7F6DF6003D6B47 /* Interactor.swift */,
 				BDD67B321F78B0D1001E939E /* Main.storyboard */,
+				BD3961921F91C39100A884A2 /* StartViewController.swift */,
 				BD09B6EA1F8206930018D6C2 /* View */,
 				BDF4F1FA1F7C76110012AAD3 /* Model */,
 				BDF4F1F51F7C64480012AAD3 /* Controllers */,
@@ -300,7 +315,9 @@
 				BD82B2411F86131200CE30DA /* ProductViewController.swift */,
 				BD8788B11F884D1F00ED3617 /* CartViewController.swift */,
 				BD9AE7CE1F8DC7F600E2C52C /* CheckOutViewController.swift */,
+				BD5AA3F01F93040C00A39619 /* PaymentOptionsViewController.swift */,
 				BD736F2D1F8C439D0012FE85 /* DetailedAddressViewController.swift */,
+				BD36F6E61F9418FC000B7E7F /* AddPayementViewController.swift */,
 				BD9AE7CC1F8D9E3100E2C52C /* RecipientInfoViewController.swift */,
 				BD6529AE1F8B4C8900BB9D49 /* AddressSearchViewController.swift */,
 				BD8878391F8A094B00AE36FD /* AddContactViewController.swift */,
@@ -313,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				BDF4F1F81F7C73370012AAD3 /* User.swift */,
+				BD5AA3F21F93084800A39619 /* Payment.swift */,
 				BD6529AC1F8B0A5C00BB9D49 /* Contact.swift */,
 				BD9AE7C81F8CA7F200E2C52C /* Address.swift */,
 				BD09B6EB1F820A640018D6C2 /* Category.swift */,
@@ -612,6 +630,8 @@
 				BD8788B41F884D9700ED3617 /* CartTableViewCell.swift in Sources */,
 				BDF4F1EA1F7C0C080012AAD3 /* LoginViewController.swift in Sources */,
 				BDF4F1F21F7C0C370012AAD3 /* PasswordViewController.swift in Sources */,
+				BD5AA3EF1F92E63B00A39619 /* NavigationExtension.swift in Sources */,
+				BD5AA3F11F93040C00A39619 /* PaymentOptionsViewController.swift in Sources */,
 				BD82B24C1F87559A00CE30DA /* Cart.swift in Sources */,
 				BD82B2401F8612B900CE30DA /* ProductListTableViewCell.swift in Sources */,
 				BDF4F1EE1F7C0C230012AAD3 /* EmailViewController.swift in Sources */,
@@ -624,8 +644,10 @@
 				BD9AE7D11F8DC8F200E2C52C /* CheckOutTableViewCell.swift in Sources */,
 				BD9AE7CB1F8CB40000E2C52C /* Recipient.swift in Sources */,
 				BD09B6E91F8206900018D6C2 /* HomeCollectionViewCell.swift in Sources */,
+				BD5AA3F51F93127F00A39619 /* PaymentOptionsTableViewCell.swift in Sources */,
 				BDD67B2F1F78B0D1001E939E /* AppDelegate.swift in Sources */,
 				BD6529B11F8B4CE200BB9D49 /* AddressSearchTableViewCell.swift in Sources */,
+				BD36F6E71F9418FC000B7E7F /* AddPayementViewController.swift in Sources */,
 				BDD1457F1F7F6DF7003D6B47 /* Interactor.swift in Sources */,
 				BD9AE7CD1F8D9E3100E2C52C /* RecipientInfoViewController.swift in Sources */,
 				BD8788B21F884D2000ED3617 /* CartViewController.swift in Sources */,
@@ -636,10 +658,12 @@
 				BD09B6EC1F820A640018D6C2 /* Category.swift in Sources */,
 				BD736F2E1F8C439D0012FE85 /* DetailedAddressViewController.swift in Sources */,
 				BD5DBC1A1F8F25DE009E4411 /* PhoneVerificationViewController.swift in Sources */,
+				BD5AA3F31F93084800A39619 /* Payment.swift in Sources */,
 				BDF4F1EC1F7C0C180012AAD3 /* NameViewController.swift in Sources */,
 				BDF4F1F91F7C73370012AAD3 /* User.swift in Sources */,
 				BD9AE7C91F8CA7F200E2C52C /* Address.swift in Sources */,
 				BD8878361F89DCE500AE36FD /* AddressChangeViewController.swift in Sources */,
+				BD3961931F91C39100A884A2 /* StartViewController.swift in Sources */,
 				BD3961911F8F62EB00A884A2 /* IntExtension.swift in Sources */,
 				BD88783A1F8A094B00AE36FD /* AddContactViewController.swift in Sources */,
 				BD8878341F89DC4400AE36FD /* NewAddressTableViewCell.swift in Sources */,

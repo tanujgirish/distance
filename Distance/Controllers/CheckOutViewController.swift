@@ -15,10 +15,7 @@ class CheckOutViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var confirmButton: UIButton!
-    
-    var selectedUser: User!
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +48,8 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             
             let cell: DeliveryInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "deliverycell", for: indexPath) as! DeliveryInfoTableViewCell
-            cell.nameLabel.text = selectedUser.name
-            cell.phoneLabel.text = selectedUser.phone
+            cell.nameLabel.text = Recipient.sharedInstance.selectedUser.name
+            cell.phoneLabel.text = Recipient.sharedInstance.selectedUser.phone
             return cell
             
         } else if indexPath.row == 1 {
@@ -71,6 +68,13 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
             let cell: TotalTableViewCell = tableView.dequeueReusableCell(withIdentifier: "totalcell", for: indexPath) as! TotalTableViewCell
             return cell
             
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "paymentoptionsvc") as! PaymentOptionsViewController
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
